@@ -1,0 +1,15 @@
+{
+  "name": "socketioexpress",
+  "version": "1.0.0",
+  "description": "I will be demonstrating how to build socketIo in Express js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.7.2"
+  }
+}
