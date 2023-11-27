@@ -12,7 +12,19 @@
 
     <script>
         var socket = io();
-        console.log(socket)
+        // socket.on('message',(data)=>{
+        //     document.write(data.toString())
+        // })
+      
+        // socket.on('myCustomEvent',data=>{
+        //     document.write(data.description)
+        // })
+
+        socket.on('newUserConnected',data=>{
+            document.body.innerHTML = '';
+            document.write(data.toString())
+        })
+        
     </script>
 </body>
 </html>

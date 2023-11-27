@@ -17,11 +17,31 @@ app.get('/', function (req, res) {
   res.sendFile('index.html', option)
 })
 
+var users=0
 io.on('connection', function(socket){
   console.log(' A user connected')
   socket.on('disconnect', function(){
     console.log(' A user disconnected')
+    users--;
+    socket.broadcast.emit('newUserConnected',`${users} users are connected`)
+    // io.sockets.emit('broadcast',`${users} users are disconnected`)
   })
+  users++;
+  socket.emit('newUserConnected','hi , welcome dear')
+
+  socket.broadcast.emit('newUserConnected',`${users} users are connected`)
+  // io.sockets.emit('broadcast',`${users} users are connected`)
+  setTimeout(function(){
+    socket.send("message sent howa hai server side say ") /// message event fire howa tha 
+
+    socket.emit('myCustomEvent',{
+      id:1,
+      description:"A custom message for client Side"
+    })
+    
+    
+  })
+  
 })
 
 
