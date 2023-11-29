@@ -23,7 +23,7 @@ io.on('connection', function(socket){
   socket.on('disconnect', function(){
     console.log(' A user disconnected')
     users--;
-    socket.broadcast.emit('newUserConnected',`${users} users are connected`)
+    socket.broadcast.emit('newUserConnected',`${users} users are disconnected`)
     // io.sockets.emit('broadcast',`${users} users are disconnected`)
   })
   users++;
